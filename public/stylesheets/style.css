@@ -1,8 +1,55 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
 }
 
 a {
   color: #00B7FF;
+}
+
+#news{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 87vh;
+  width: 100%;
+}
+
+#image{
+  width: 100%;
+  overflow: hidden;
+}
+
+#titulo{
+  position: absolute;
+  left: 220px;
+  top: 200px;
+  font-size: 50px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#button{
+  position: absolute;
+  bottom: 200px;
+  padding: 20px;
+  font-size: 30px;
+  width: 200px;
+}
+
+#back{
+  position: absolute;
+  left: 100px;
+  bottom: 100px;
+}
+
+footer{
+  height: 7vh;
+  background: rgb(48, 48, 48);
 }
