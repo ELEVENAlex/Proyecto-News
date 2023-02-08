@@ -6,10 +6,18 @@ const connection = dbConnection()
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    connection.query('SELECT * FROM news', (error, result) => {
+    let sql = ''
+    if(req.query.page){
+        sql = 'SELECT * FROM news LIMIT '+((req.query.page * 4)+(1*req.query.page))+',5'
+    }else{
+        sql = 'SELECT * FROM news LIMIT 0,5'
+    }
+    connection.query((sql), (error, result) => {
         res.render('news/news.ejs', {
-            news: result
+            news: result,
+            page: req.query.page
         })
+        console.log(req.query.page)
     })
 });
 

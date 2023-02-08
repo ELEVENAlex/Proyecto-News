@@ -23,13 +23,21 @@
                         <th>NEWS</th>
                     </tr>
                     <% for(let i=0; i < news.length; i++){ %>
-                        <tr>
+                        <tr id="<%= i%>">
                             <td><%=news[i].id_news%></td>
                             <td><%=news[i].title%></td>
                             <td><%=news[i].news%></td>
                         </tr>
                     <% } %>
                 </table>
+                <div>
+                    <% if(news[0].id_news != 1){ %>
+                        <a href="/news?page=<%= (page ? parseInt(page)-1 : 0)%>" class="btn btn-primary">Back</a>
+                    <% } %>
+                    <% if(news[4]){ %>
+                        <a href="/news?page=<%= (page ? parseInt(page)+1 : 1)%>" class="btn btn-primary">Forward</a>
+                    <% } %>
+                </div>
             </div>
     
             <div class="col-md-6 mt-4 card">
